@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wissal Akkaoui | Data Scientist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Cabinet+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <style>
+        :root {
+            --bg: #0A0A0A;
+            --surface: #171717;
+            --text: #F8FAFC;
+            --accent: #22D3EE;
+            --grid-gap: 32px;
+            --section-padding: 128px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Cabinet Grotesk', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            line-height: 0.9;
+        }
+
+        /* Layout Container */
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-logo { font-weight: 700; font-size: 20px; color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text); text-decoration: none; font-size: 14px; opacity: 0.7; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        /* Hero Section - Asymmetric */
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            padding: var(--section-padding) 0;
+            align-items: end;
+        }
+
+        .hero-text {
+            grid-column: 1 / span 8;
+        }
+
+        .hero h1 {
+            font-size: clamp(64px, 12vw, 120px);
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            grid-column: 9 / span 4;
+            font-size: 18px;
+            border-left: 2px solid var(--accent);
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Experience Sections */
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 64px;
+            color: var(--accent);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            gap: var(--grid-gap);
+            margin-bottom: 96px;
+        }
+
+        .exp-meta { opacity: 0.5; font-size: 14px; text-transform: uppercase; }
+        .exp-content h3 { font-size: 28px; margin-bottom: 12px; }
+        .exp-content p { margin-bottom: 16px; opacity: 0.8; }
+
+        /* Project Cards - Snappy Micro-interactions */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 4px;
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .project-card h4 { font-family: 'Syne'; font-size: 24px; margin-bottom: 16px; }
+        .tag { font-size: 12px; background: rgba(34, 211, 238, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 100px; margin-right: 8px; }
+
+        /* Footer */
+        footer {
+            padding: 128px 0 64px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-link {
+            font-family: 'Syne';
+            font-size: 48px;
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        .contact-link:hover { color: var(--accent); }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero, .experience-grid, .projects-container { grid-template-columns: 1fr; }
+            .hero-text, .hero-sub { grid-column: 1 / -1; }
+            .hero-sub { margin-top: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <nav>
+        <div class="nav-logo">W.AKKAOUI</div>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero reveal">
+        <div class="hero-text">
+            <h1>Data<br><span style="color:var(--accent)">Science</span><br>Architect</h1>
+        </div>
+        <div class="hero-sub">
+            <p>Trilingual Junior Data Scientist specializing in AI pipelines and IT optimization. Currently intern at Francoflex.</p>
+        </div>
+    </section>
+
+    <section id="work" style="padding: var(--section-padding) 0;">
+        <h2 class="section-title reveal">Selected Experience</h2>
+        
+        <div class="experience-grid reveal">
+            <div class="exp-meta">Sep 2025 — Present</div>
+            <div class="exp-content">
+                <h3>Francoflex | Conversational AI Intern</h3>
+                <p>Fine-tuning ASR models and cleaning multilingual accent data to build robust, conversational pipelines.</p>
+            </div>
+        </div>
+
+        <div class="experience-grid reveal">
+            <div class="exp-meta">Oct 2025 — Present</div>
+            <div class="exp-content">
+                <h3>Enactus | Mental Wellness Ambassador</h3>
+                <p>Leading mental health initiatives and fostering a supportive community for students at Collège La Cité.</p>
+            </div>
+        </div>
+
+        <div class="experience-grid reveal">
+            <div class="exp-meta">Apr 2025 — Jul 2025</div>
+            <div class="exp-content">
+                <h3>Cognizant | GenAI Extern</h3>
+                <p>Developed AI text completion apps and BigGAN image pipelines using prompt engineering and temperature tuning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-bottom: var(--section-padding);">
+        <h2 class="section-title reveal">Technical Projects</h2>
+        <div class="projects-container">
+            <div class="project-card reveal">
+                <i data-lucide="scan-face" style="color:var(--accent); margin-bottom: 20px;"></i>
+                <h4>Facial Emotion Detection</h4>
+                <p style="margin-bottom:20px; opacity: 0.7;">Deep learning suite using TensorFlow/Keras to achieve 79% performance across 20k images.</p>
+                <div>
+                    <span class="tag">CNN</span><span class="tag">TensorFlow</span>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <i data-lucide="database" style="color:var(--accent); margin-bottom: 20px;"></i>
+                <h4>SVHN Digit Recognition</h4>
+                <p style="margin-bottom:20px; opacity: 0.7;">Preprocessed 600K+ labeled digits from the Street View House Numbers dataset for high-accuracy classification.</p>
+                <div>
+                    <span class="tag">EDA</span><span class="tag">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="reveal" style="padding-bottom: var(--section-padding);">
+        <h2 class="section-title">Skills & Stack</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">Python</span>
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">SQL</span>
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">TensorFlow</span>
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">AWS / GCP</span>
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">React</span>
+            <span class="tag" style="font-size: 18px; padding: 10px 24px;">PyTorch</span>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p style="opacity: 0.5; margin-bottom: 16px;">READY FOR THE NEXT CHALLENGE?</p>
+        <a href="mailto:wissal.akkaoui2609@gmail.com" class="contact-link">Get In Touch</a>
+        <div style="margin-top: 40px; display: flex; justify-content: center; gap: 24px;">
+            <a href="https://github.com/wiswis01" target="_blank" style="color:var(--text)"><i data-lucide="github"></i></a>
+            <a href="https://linkedin.com/in/wissalakk" target="_blank" style="color:var(--text)"><i data-lucide="linkedin"></i></a>
+        </div>
+    </footer>
+</main>
+
+<script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Scroll Reveal Logic
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
